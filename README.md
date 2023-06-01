@@ -44,14 +44,44 @@ A0 = Y7 + Y5 + Y3 + Y1 <br>
 
 
 ## Program:
+~~~
+Decoder
+
+module exp8a(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0=((~a)&(~b)&(~c));
+assign d1=((~a)&(~b)&c);
+assign d2=((~a)&b&(~c));
+assign d3=((~a)&b&c);
+assign d4=(a&(~b)&(~c));
+assign d5=(a&(~b)&c);
+assign d6=(a&b&(~c));
+assign d7=(a&b&c);
+endmodule
+
+Encoder
+
+module exp8b(y7,y6,y5,y4,y3,y2,y1,a2,a1,a0);
+input y7,y6,y5,y4,y3,y2,y1;
+output a2,a1,a0;
+assign a2=(y7+y6+y5+y4);
+assign a1=(y7+y6+y3+y2);
+assign a0=(y7+y5+y3+y1);
+endmodule
+~~~
 
 
 ## RTL Schematic:
+![RTL](https://github.com/Anuranjana23/encoder-decoder/assets/134050204/e51d8be3-4110-4df5-937d-30474017580a)
+![RTL](https://github.com/Anuranjana23/encoder-decoder/assets/134050204/bd1926c9-e2e9-457d-91de-75a7f3c87f06)
 
 
 
 
 ## Timing Diagram:
+![Timing diagram](https://github.com/Anuranjana23/encoder-decoder/assets/134050204/ea8ff02c-d007-4879-a9d9-c0fe4cc01d90)
+![Timing diagram](https://github.com/Anuranjana23/encoder-decoder/assets/134050204/28f4227b-e189-4aba-bae0-003461ba8df5)
 
 
 
